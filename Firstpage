@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Color;
 import javax.swing.JButton;
+import javax.swing.ImageIcon;
 
 public class first extends JFrame {
 
@@ -41,19 +42,25 @@ public class first extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		//setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
-		contentPane.setBackground(Color.PINK);
-		contentPane.setForeground(Color.PINK);
+		contentPane.setBackground(Color.BLACK);
+		contentPane.setForeground(Color.BLACK);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setExtendedState(Frame.MAXIMIZED_BOTH);
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JLabel lblWelcomeToIbot = new JLabel("WELCOME TO  IBOT");
+		lblWelcomeToIbot.setForeground(Color.PINK);
 		lblWelcomeToIbot.setFont(new Font("Tahoma", Font.BOLD, 70));
 		lblWelcomeToIbot.setBounds(598, 49, 972, 107);
 		contentPane.add(lblWelcomeToIbot);
 		btnClickToChat.setFont(new Font("Tahoma", Font.ITALIC, 45));
 		btnClickToChat.setBounds(722, 280, 436, 69);
 		contentPane.add(btnClickToChat);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\lenovo\\Desktop\\ea1d9797c9bf3dda7a23b238e5e4b364.jpg"));
+		lblNewLabel.setBounds(-12, 0, 1977, 1031);
+		contentPane.add(lblNewLabel);
 	}
 }
