@@ -12,11 +12,12 @@ import java.awt.Font;
 import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
+import javax.swing.JTextField;
 
 public class first extends JFrame {
 
 	private JPanel contentPane;
-	private final JButton btnClickToChat = new JButton("CLICK TO CHAT");
+	private final JButton btnClickToChat = new JButton("Click to chat with Ibot.");
 
 	/**
 	 * Launch the application.
@@ -48,18 +49,13 @@ public class first extends JFrame {
 		setExtendedState(Frame.MAXIMIZED_BOTH);
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
-		JLabel lblWelcomeToIbot = new JLabel("WELCOME TO  IBOT");
-		lblWelcomeToIbot.setForeground(Color.PINK);
-		lblWelcomeToIbot.setFont(new Font("Tahoma", Font.BOLD, 70));
-		lblWelcomeToIbot.setBounds(598, 49, 972, 107);
-		contentPane.add(lblWelcomeToIbot);
-		btnClickToChat.setFont(new Font("Tahoma", Font.ITALIC, 45));
-		btnClickToChat.setBounds(722, 280, 436, 69);
+		btnClickToChat.setFont(new Font("Tahoma", Font.PLAIN, 35));
+		btnClickToChat.setBounds(1295, 231, 531, 69);
 		contentPane.add(btnClickToChat);
 		
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\lenovo\\Desktop\\ea1d9797c9bf3dda7a23b238e5e4b364.jpg"));
+		lblNewLabel.setForeground(Color.BLACK);
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\lenovo\\Desktop\\irequest.png"));
 		lblNewLabel.setBounds(-12, 0, 1977, 1031);
 		contentPane.add(lblNewLabel);
 	}
