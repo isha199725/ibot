@@ -1,0 +1,61 @@
+package hello;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JFrame;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+public class Second extends JFrame{
+	private JTextArea Chatarea=new JTextArea();
+	private JTextField Chatbox=new JTextField();
+	public Second(){
+		JFrame frame=new JFrame();
+		frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		frame.setVisible(true);
+		frame.setResizable(false);
+		frame.setLayout(null);
+		frame.setSize(800, 800);
+		frame.setTitle("chatbot");
+		frame.add(Chatarea);
+		frame.add(Chatbox);
+		
+		// for textarea
+		
+		Chatarea.setSize(800, 400);
+		Chatarea.setLocation(2, 2);
+		
+		// for textfield
+		Chatbox.setSize(800, 30);
+		Chatbox.setLocation(2, 550);
+		
+		Chatbox.addActionListener(new ActionListener(){
+
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				String gtext=Chatbox.getText();
+				Chatarea.append("YOU--->>" + gtext + "\n" );
+				
+				if(gtext.contains("Hi")){
+					bot("holla");
+					
+				}
+				
+			}
+			
+		});
+	}
+		private void bot(String string){
+			Chatarea.append("BOT--->>" +string+ "\n");
+		
+			
+		}
+	
+
+	public static void main(String args[])
+	{
+		new Second();
+
+}
+}
