@@ -13,6 +13,8 @@ import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import javax.swing.JTextField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class first extends JFrame {
 
@@ -49,6 +51,15 @@ public class first extends JFrame {
 		setExtendedState(Frame.MAXIMIZED_BOTH);
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		//to move from one frame to another on button click.
+		btnClickToChat.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Second obj=new Second();
+				obj.setVisible(true);
+				//contentPane.setVisible(false);
+			}
+		});
 		btnClickToChat.setFont(new Font("Tahoma", Font.PLAIN, 35));
 		btnClickToChat.setBounds(1295, 231, 531, 69);
 		contentPane.add(btnClickToChat);
