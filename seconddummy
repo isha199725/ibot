@@ -1,0 +1,96 @@
+package hello;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import java.awt.Color;
+
+import javax.swing.JLabel;
+
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+public class seconddummy extends JFrame {
+	
+
+	private JPanel contentPane;
+	private JTextField textField;
+	private JTextArea Chatarea=new JTextArea();
+	private JTextField Chatbox=new JTextField();
+	private final JLabel lblNewLabel = new JLabel("Ibot");
+
+	public seconddummy() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 800, 800);
+		contentPane = new JPanel();
+		contentPane.setBackground(Color.PINK);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblAskYourQuestions = new JLabel("Ask your questions to Ibot below");
+		lblAskYourQuestions.setFont(new Font("Verdana", Font.PLAIN, 20));
+		lblAskYourQuestions.setBounds(12, 583, 349, 26);
+		contentPane.add(lblAskYourQuestions);
+		// For chat field(where the user types)
+		
+		
+		Chatarea.setFont(new Font("Courier New", Font.BOLD, 20));
+		Chatarea.setBounds(12, 66, 758, 479);
+		contentPane.add(Chatarea);
+		
+		//for the chatbox(response of the bot)
+		
+		
+		Chatbox.setFont(new Font("Courier New", Font.BOLD, 20));
+		Chatbox.setBounds(12, 622, 758, 42);
+		contentPane.add(Chatbox);
+		Chatbox.setColumns(10);
+		lblNewLabel.setFont(new Font("Courier New", Font.BOLD, 20));
+		lblNewLabel.setBounds(350, 13, 92, 26);
+		
+		contentPane.add(lblNewLabel);
+		
+		Chatbox.addActionListener(new ActionListener(){
+
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				String gtext=Chatbox.getText().toLowerCase();
+				Chatarea.append("YOU--->>" + gtext + "\n" );
+				Chatbox.setText(" ");
+				
+				if(gtext.contains("hi")){
+					bot("holla");
+					}
+				else{
+					bot("I DON'T UNDERSTAND YOU");
+				}
+				
+			}
+			
+		});
+	}
+	private void bot(String string){
+		Chatarea.append("BOT--->>" +string+ "\n");
+	
+		
+	}
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		
+		seconddummy frame = new seconddummy();
+		frame.setVisible(true);
+				
+	
+}
+}
