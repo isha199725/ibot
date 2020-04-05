@@ -34,12 +34,15 @@ public class Second extends JFrame{
 
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				String gtext=Chatbox.getText();
+				String gtext=Chatbox.getText().toLowerCase();
 				Chatarea.append("YOU--->>" + gtext + "\n" );
+				Chatbox.setText(" ");
 				
-				if(gtext.contains("Hi")){
+				if(gtext.contains("hi")){
 					bot("holla");
-					
+					}
+				else{
+					bot("I DON'T UNDERSTAND YOU");
 				}
 				
 			}
@@ -51,6 +54,7 @@ public class Second extends JFrame{
 		
 			
 		}
+	
 	
 
 	public static void main(String args[])
