@@ -17,6 +17,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.UIManager;
 
 public class seconddummy extends JFrame {
 	
@@ -31,7 +32,7 @@ public class seconddummy extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 800);
 		contentPane = new JPanel();
-		contentPane.setBackground(Color.PINK);
+		contentPane.setBackground(new Color(255, 182, 193));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -46,6 +47,11 @@ public class seconddummy extends JFrame {
 		Chatarea.setFont(new Font("Courier New", Font.BOLD, 20));
 		Chatarea.setBounds(12, 66, 758, 479);
 		contentPane.add(Chatarea);
+		Chatarea.append("Hello user Isha Wanjari \nThis is your request assistant \n");
+		//Chatarea.append("holaaa");
+		
+		
+		
 		
 		//for the chatbox(response of the bot)
 		
@@ -54,6 +60,8 @@ public class seconddummy extends JFrame {
 		Chatbox.setBounds(12, 622, 758, 42);
 		contentPane.add(Chatbox);
 		Chatbox.setColumns(10);
+		
+		
 		lblNewLabel.setFont(new Font("Courier New", Font.BOLD, 20));
 		lblNewLabel.setBounds(350, 13, 92, 26);
 		
@@ -65,10 +73,10 @@ public class seconddummy extends JFrame {
 				// TODO Auto-generated method stub
 				String gtext=Chatbox.getText().toLowerCase();
 				Chatarea.append("YOU--->>" + gtext + "\n" );
-				Chatbox.setText(" ");
+				Chatbox.setText("");
 				
 				if(gtext.contains("hi")){
-					bot("holla");
+					bot("Welcome! \nWhich service would you like to request for? \n1.Software request. \n2.IT accessories \n3.Data Card");
 					}
 				else{
 					bot("I DON'T UNDERSTAND YOU");
