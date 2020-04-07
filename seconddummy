@@ -18,41 +18,32 @@ import java.awt.event.ActionListener;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
+import javax.swing.JScrollPane;
 
 public class seconddummy extends JFrame {
 	
 
 	private JPanel contentPane;
 	private JTextField textField;
-	private JTextArea Chatarea=new JTextArea();
-	private JTextField Chatbox=new JTextField();
+	public JTextArea Chatarea=new JTextArea();
+	public JTextField Chatbox=new JTextField();
 	private final JLabel lblNewLabel = new JLabel("Ibot");
+	private final JScrollPane scrollPane = new JScrollPane();
 
 	public seconddummy() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 800);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(255, 182, 193));
+		contentPane.setBackground(new Color(135, 206, 235));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JLabel lblAskYourQuestions = new JLabel("Ask your questions to Ibot below");
 		lblAskYourQuestions.setFont(new Font("Verdana", Font.PLAIN, 20));
-		lblAskYourQuestions.setBounds(12, 583, 349, 26);
+		lblAskYourQuestions.setBounds(205, 583, 349, 26);
 		contentPane.add(lblAskYourQuestions);
-		// For chat field(where the user types)
-		
-		
-		Chatarea.setFont(new Font("Courier New", Font.BOLD, 20));
-		Chatarea.setBounds(12, 66, 758, 479);
-		contentPane.add(Chatarea);
-		Chatarea.append("Hello user Isha Wanjari \nThis is your request assistant \n");
 		//Chatarea.append("holaaa");
-		
-		
-		
-		
 		//for the chatbox(response of the bot)
 		
 		
@@ -66,6 +57,15 @@ public class seconddummy extends JFrame {
 		lblNewLabel.setBounds(350, 13, 92, 26);
 		
 		contentPane.add(lblNewLabel);
+		scrollPane.setBounds(42, 67, 701, 484);
+		
+		contentPane.add(scrollPane);
+		scrollPane.setViewportView(Chatarea);
+		// For chat field(where the user types)
+		
+		
+		Chatarea.setFont(new Font("Courier New", Font.BOLD, 20));
+		Chatarea.append("Hello user Isha Wanjari \nThis is your request assistant \n");
 		
 		Chatbox.addActionListener(new ActionListener(){
 
@@ -102,3 +102,4 @@ public class seconddummy extends JFrame {
 	
 }
 }
+
